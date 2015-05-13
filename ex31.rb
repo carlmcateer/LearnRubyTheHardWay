@@ -6,7 +6,7 @@ door = $stdin.gets.chomp
 if door == "1"
   puts "There is a giant bear here eating a cheese cake. What do you do?"
   puts "1. Take the cake."
-  puts "2. Scream at the bear. "
+  puts "2. Scream at the bear."
 
   print ">"
   bear = $stdin.gets.chomp
@@ -35,5 +35,18 @@ elsif door == "2"
   end
 
 else
-  puts "You stumble around and fall on a knife and die. Good job!"
-end
+  puts "Why did you pick this door?"
+  puts "You think 3 is the magic number or something?"
+  puts "Hugh buddy? Yes or No!"
+  print ">"
+  yes_no = $stdin.gets.chomp.upcase
+
+  if yes_no == "YES"
+    puts "A wizard three blows you away! Good Job!"
+  elsif yes_no == "NO"
+    puts "You are killed by a 3 assassin's. Good Job!"
+  else
+    puts "You win. Better look next time!"
+  end
+
+ end
