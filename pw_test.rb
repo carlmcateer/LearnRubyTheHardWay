@@ -1,6 +1,6 @@
 puts "Type a file name please"
 file = $stdin.gets.chomp
-password = "1234567890"
+password = "carl"
 print "Password: "
 user_pw = $stdin.gets.chomp
 if password == user_pw
