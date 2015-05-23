@@ -68,10 +68,23 @@ end
 
 def dead(why)
   puts why, "Hahahhahaha"
-  exit(0)
+  play_again
 end
 
 def wins(why)
   puts why, "*Choirs of angles*"
-  exit(0)
+  play_again
 end
+
+def play_again
+  puts "Would you like to play again?"
+  print "y/n >>"
+  choice = $stdin.gets.chomp
+  if choice == "y"
+    start
+  else
+    exit(0)
+  end
+end
+
+start
