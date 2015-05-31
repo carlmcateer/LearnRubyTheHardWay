@@ -1,4 +1,4 @@
-module Other
+module Mixin
 
   def override()
     puts "OTHER override()"
@@ -8,14 +8,15 @@ module Other
     puts "OTHER implicit()"
   end
 
-  def Other.altered()
+  def Mixin.altered()
     puts "OTHER altered()"
   end
 
 end
 
 class Child
-  include Other
+# This include pulls in the module above, it is known as a mixin!!
+  include Mixin
 
   def override()
     puts "CHILD override()"
@@ -23,12 +24,12 @@ class Child
 
   def altered()
     puts "CHILD, before OTHER altered()"
-    Other.altered()
+    Mixin.altered()
     puts "CHILD, after OTHER altered()"
   end
 end
-son = Child.new()
+jimmy = Child.new()
 
-son.implicit()
-son.override()
-son.altered()
+jimmy.implicit()
+jimmy.override()
+jimmy.altered()

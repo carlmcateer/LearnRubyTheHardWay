@@ -90,4 +90,4 @@ mother.implicit()
 son.implicit()
 
 mother.altered()
-son.altered()
+son.altered
