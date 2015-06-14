@@ -22,7 +22,24 @@ class TestNAME < Test::Unit::TestCase
 	end
 
 	def test_stops()
-		
+		assert_equal(Lexicon.scan("the"), [['stop', 'the']])
+		result = Lexicon.scan("the in of")
+
+		assert_equal(result, [['stop', 'the'],
+													['stop', 'in'],
+													['stop', 'of']])
+	end
+
+	def test_nouns()
+		assert_equal(Lexicon.scan("bear"), [['noun', 'bear']])
+		result = Lexicon.scan("bear princess")
+
+		assert_equal(result, [['noun', 'bear'],
+													['noun', 'princess']])
+	end
+
+	def test_numbers()
+		assert_equal(Lexicon.scan("1234"), [['number', 1234]])
 	end
 
 end
